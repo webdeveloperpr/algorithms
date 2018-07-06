@@ -1,19 +1,25 @@
+import { swap } from '../utils';
+
 const bubbleSort1 = (arr) => {
   const length = arr.length - 1;
   return arr
-    .reduce(({ acc, swapped, nextIndex }, val, i) => {
+    .reduce(({ acc, swapped, lastIndex }, val, i) => {
       // If a value was swapped re-run the bubbleSort
-      if (i === length && swapped) return bubbleSort1(acc);
+      if (i === length && swapped) {
+        const sliceLeft = acc.slice(0, lastIndex);
+        const sliceRight = acc.slice(lastIndex);
+        return [...bubbleSort1(sliceLeft).acc, ...sliceRight];
+      }
 
       // Swap values when index > index + 1
       if (acc[i] > acc[i + 1]) {
         const temp = acc[i];
         acc[i] = acc[i + 1];
         acc[i + 1] = temp;
-        return { acc, swapped: true };
+        return { acc, swapped: true, lastIndex: i };
       }
 
-      return { acc, swapped };
+      return { acc, swapped, lastIndex };
     }, { acc: arr, swapped: false });
 };
 
@@ -23,17 +29,15 @@ const bubbleSort2 = (arr) => {
   let swapped;
   do {
     swapped = false;
-    for(let i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
       if (x[i] > x[i + 1]) {
-        const temp = x[i];
-        x[i] = x[i + 1];
-        x[i + 1] = temp;
+        swap(x, i, i + 1);
         swapped = true;
       }
     }
     length--;
-    
-  } while(swapped);
+
+  } while (swapped);
   return x;
 };
 
