@@ -4,6 +4,4 @@ const swap = (array, i, j) => {
   array[j] = temp;
 };
 
-export {
-  swap,
-}
+export { swap };
