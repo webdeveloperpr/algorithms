@@ -11,7 +11,7 @@ const merge = (left = [], right = []) => {
   return sortedArr;
 };
 
-function mergeSort(arr) {
+const mergeSort = arr => {
   const length = arr.length;
   if (length < 2) return arr;
   const mid = parseInt(length / 2);
@@ -19,6 +19,6 @@ function mergeSort(arr) {
   const right = arr.slice(mid);
 
   return merge(mergeSort(left), mergeSort(right));
-}
+};
 
 export { mergeSort };
