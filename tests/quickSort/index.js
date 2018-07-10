@@ -5,14 +5,9 @@ const quickSort = (arr = []) => {
   const pivot = arr[0];
   const left = [];
   const right = [];
-
   arr.forEach((x, i) => {
-    if (i === 0) return; // this is the pivot
-    x < pivot ? left.push(x) : right.push(x)
+    if (i !== 0) x < pivot ? left.push(x) : right.push(x)
   });
-
-  console.log('left', left);
-  console.log('right', right);
 
   return quickSort(left).concat(pivot, quickSort(right));
 };

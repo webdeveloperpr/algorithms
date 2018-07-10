@@ -1,6 +1,6 @@
 import { quickSort } from './';
 
-describe.only('quickSort', () => {
+describe('quickSort', () => {
   const arr = [4, 1, 5, 3, 2];
   it('should sort', () => {
     const result = quickSort(arr);
