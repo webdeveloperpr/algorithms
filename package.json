@@ -8,7 +8,7 @@
     "url": "git+ssh://git@github.com/webdeveloperpr/algorithms.git"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --require ./config/test_helper.js --recursive ./tests/**/*.spec.js",
+    "test": "mocha --compilers js:babel-core/register --require ./config/test_helper.js --recursive ./src/**/*.spec.js",
     "test:watch": "npm run test -- --watch"
   },
   "babel": {
@@ -44,5 +44,8 @@
   "homepage": "https://webdeveloperpr.github.io/algorithms",
   "keywords": [
     "algorithms"
-  ]
+  ],
+  "dependencies": {
+    "lodash.shuffle": "^4.2.0"
+  }
 }

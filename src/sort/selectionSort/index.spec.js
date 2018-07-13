@@ -1,4 +1,4 @@
-import { selectionSort } from './';
+import { selectionSort } from './index';
 
 describe('selectionSort', () => {
   const arr = [1, 2, 4, 3, 5];

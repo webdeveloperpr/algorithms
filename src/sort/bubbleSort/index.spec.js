@@ -1,4 +1,4 @@
-import { bubbleSort } from './';
+import { bubbleSort } from './index';
 
 describe('bubbleSort', () => {
   const arr = [1, 2, 4, 3, 5];

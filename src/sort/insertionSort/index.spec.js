@@ -1,4 +1,4 @@
-import { insertionSort } from './';
+import { insertionSort } from './index';
 
 describe('insertionSort', () => {
   const arr = [1, 2, 4, 3, 5];

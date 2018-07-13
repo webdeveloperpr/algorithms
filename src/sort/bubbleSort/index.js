@@ -1,4 +1,4 @@
-import { swap } from '../utils';
+import { swap } from '../utils/index';
 
 // Inefficient algorithm, but it's simple enough to implement.
 const bubbleSort = (arr) => {

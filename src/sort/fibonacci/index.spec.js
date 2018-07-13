@@ -1,4 +1,4 @@
-import { fibonacci } from './';
+import { fibonacci } from './index';
 
 describe('fibonacci', () => {
   it('should return the fibonacci number at the specified index', () => {
